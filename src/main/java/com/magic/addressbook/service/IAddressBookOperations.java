@@ -13,4 +13,5 @@ public interface IAddressBookOperations {
 
     void searchPersonInState(String state);
 
+    void writeToCSV(String name, String fileName) throws IOException;
 }

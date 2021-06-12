@@ -97,7 +97,6 @@ public class ContactMenu {
                 default:
                     break;
             }
-
         } while (option != 10);
     }
 }

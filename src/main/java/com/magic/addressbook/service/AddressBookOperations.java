@@ -47,4 +47,11 @@ public class AddressBookOperations implements IAddressBookOperations {
         }
     }
 
+    @Override
+    public void writeToCSV(String name, String fileName) throws IOException {
+        ReadWriteToCSV readWriteToCSV = new ReadWriteToCSV();
+        readWriteToCSV.writeToCSV(addressBook.get(name),fileName);
+    }
+
+
 }
