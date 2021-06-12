@@ -53,5 +53,11 @@ public class AddressBookOperations implements IAddressBookOperations {
         readWriteToCSV.writeToCSV(addressBook.get(name),fileName);
     }
 
+    @Override
+    public void readToCSV(String file) {
+        ReadWriteToCSV readWriteToCSV = new ReadWriteToCSV();
+        readWriteToCSV.readFromCSV(file);
+    }
+
 
 }

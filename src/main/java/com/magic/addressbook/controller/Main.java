@@ -18,7 +18,8 @@ public class Main {
             System.out.println("Enter 4 to search Persons in city");
             System.out.println("Enter 5 to search Persons in state");
             System.out.println("Enter 6 to Write To CSV File");
-            System.out.println("Enter 7 to exit");
+            System.out.println("Enter 7 Read from CSV File");
+            System.out.println("Enter 8 to exit");
             option = scanner.nextInt();
             scanner.nextLine();
             switch (option) {
@@ -53,9 +54,15 @@ public class Main {
                     System.out.println("Enter Name of CSV File in Which You Want to Write");
                     String fileName = scanner.next();
                     addressBookOperations.writeToCSV(addressBook, fileName);
+                    break;
+                case 7:
+                    System.out.println("Enter Name of CSV File from Which You Want to Read");
+                    String file = scanner.next();
+                    addressBookOperations.readToCSV(file);
+                    break;
                 default:
                     break;
             }
-        } while (option != 7);
+        } while (option != 8);
     }
 }
