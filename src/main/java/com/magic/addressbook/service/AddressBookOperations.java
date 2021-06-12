@@ -5,6 +5,7 @@ import com.magic.addressbook.entity.Contact;
 import com.opencsv.exceptions.CsvDataTypeMismatchException;
 import com.opencsv.exceptions.CsvRequiredFieldEmptyException;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -65,5 +66,11 @@ public class AddressBookOperations implements IAddressBookOperations {
     public void writeToJson(String name, String fileName) throws IOException {
         ReadWriteToJson readWriteToJson = new ReadWriteToJson();
         readWriteToJson.writeToJson(addressBook.get(name),fileName);
+    }
+
+    @Override
+    public void readFromJson(String fileName) throws FileNotFoundException {
+        ReadWriteToJson readWriteToJson = new ReadWriteToJson();
+        readWriteToJson.readFromJson(fileName);
     }
 }

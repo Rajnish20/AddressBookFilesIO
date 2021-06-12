@@ -22,7 +22,8 @@ public class Main {
             System.out.println("Enter 6 to Write To CSV File");
             System.out.println("Enter 7 Read from CSV File");
             System.out.println("Enter 8 to write to json file");
-            System.out.println("Enter 9 to exit");
+            System.out.println("Enter 9 to read from json file");
+            System.out.println("Enter 10 to exit");
             option = scanner.nextInt();
             scanner.nextLine();
             switch (option) {
@@ -68,11 +69,16 @@ public class Main {
                     String addressBookToJson = scanner.next();
                     System.out.println("Enter Name of json file in which you want to Write");
                     String file = scanner.next();
-                    addressBookOperations.writeToJson(addressBookToJson,file);
+                    addressBookOperations.writeToJson(addressBookToJson, file);
+                    break;
+                case 9:
+                    System.out.println("Enter file Name from which you want to read");
+                    String jsonFile = scanner.next();
+                    addressBookOperations.readFromJson(jsonFile);
                     break;
                 default:
                     break;
             }
-        } while (option != 9);
+        } while (option != 10);
     }
 }

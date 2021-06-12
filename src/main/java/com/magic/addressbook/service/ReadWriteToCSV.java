@@ -16,11 +16,11 @@ import java.util.List;
 public class ReadWriteToCSV {
     public static String FILE_PATH = "C:\\Users\\rajni\\Desktop\\";
 
-    public void writeToCSV(List<Contact> personList,String fileName) throws IOException, CsvDataTypeMismatchException,CsvRequiredFieldEmptyException {
+    public void writeToCSV(List<Contact> personList, String fileName) throws IOException, CsvDataTypeMismatchException, CsvRequiredFieldEmptyException {
         try
                 (
-                        Writer writer = Files.newBufferedWriter(Paths.get(FILE_PATH +fileName+".csv"));
-                ){
+                        Writer writer = Files.newBufferedWriter(Paths.get(FILE_PATH + fileName + ".csv"));
+                ) {
             StatefulBeanToCsv<Contact> beanToCsv = new StatefulBeanToCsvBuilder<Contact>(writer)
                     .withQuotechar(CSVWriter.NO_QUOTE_CHARACTER)
                     .build();
@@ -28,8 +28,7 @@ public class ReadWriteToCSV {
         }
     }
 
-    public void readFromCSV(String fileName)
-    {
+    public void readFromCSV(String fileName) {
         try {
             CSVReader csvReader = new CSVReader(new FileReader(FILE_PATH + fileName + ".csv"));
             String[] nextRecord;

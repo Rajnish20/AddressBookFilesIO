@@ -3,6 +3,7 @@ package com.magic.addressbook.service;
 import com.opencsv.exceptions.CsvDataTypeMismatchException;
 import com.opencsv.exceptions.CsvRequiredFieldEmptyException;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public interface IAddressBookOperations {
@@ -21,4 +22,6 @@ public interface IAddressBookOperations {
     void writeToCSV(String name,String fileName) throws CsvRequiredFieldEmptyException, CsvDataTypeMismatchException, IOException;
 
     void writeToJson(String name, String fileName) throws IOException;
+
+    void readFromJson(String fileName) throws FileNotFoundException;
 }
