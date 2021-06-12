@@ -19,11 +19,13 @@ public interface IAddressBookOperations {
 
     void readToCSV(String file);
 
-    void writeToCSV(String name,String fileName) throws CsvRequiredFieldEmptyException, CsvDataTypeMismatchException, IOException;
+    void writeToCSV(String name, String fileName) throws CsvRequiredFieldEmptyException, CsvDataTypeMismatchException, IOException;
 
     void writeToJson(String name, String fileName) throws IOException;
 
     void readFromJson(String fileName) throws FileNotFoundException;
 
-    void writeToTextFile(String name,String fileName);
+    void writeToTextFile(String name, String fileName);
+
+    void readFromTextFile(String fileName);
 }

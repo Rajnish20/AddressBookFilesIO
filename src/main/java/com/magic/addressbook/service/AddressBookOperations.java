@@ -59,13 +59,13 @@ public class AddressBookOperations implements IAddressBookOperations {
     @Override
     public void writeToCSV(String name, String fileName) throws CsvRequiredFieldEmptyException, CsvDataTypeMismatchException, IOException {
         ReadWriteToCSV readWriteToCSV = new ReadWriteToCSV();
-        readWriteToCSV.writeToCSV(addressBook.get(name),fileName);
+        readWriteToCSV.writeToCSV(addressBook.get(name), fileName);
     }
 
     @Override
     public void writeToJson(String name, String fileName) throws IOException {
         ReadWriteToJson readWriteToJson = new ReadWriteToJson();
-        readWriteToJson.writeToJson(addressBook.get(name),fileName);
+        readWriteToJson.writeToJson(addressBook.get(name), fileName);
     }
 
     @Override
@@ -77,6 +77,12 @@ public class AddressBookOperations implements IAddressBookOperations {
     @Override
     public void writeToTextFile(String name, String fileName) {
         ReadWriteToTextFile readWriteToTextFile = new ReadWriteToTextFile();
-        readWriteToTextFile.writeToTextFile(addressBook.get(name),fileName);
+        readWriteToTextFile.writeToTextFile(addressBook.get(name), fileName);
+    }
+
+    @Override
+    public void readFromTextFile(String fileName) {
+        ReadWriteToTextFile readWriteToTextFile = new ReadWriteToTextFile();
+        readWriteToTextFile.readFromTextFile(fileName);
     }
 }
