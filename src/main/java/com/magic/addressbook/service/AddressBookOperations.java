@@ -60,4 +60,10 @@ public class AddressBookOperations implements IAddressBookOperations {
         ReadWriteToCSV readWriteToCSV = new ReadWriteToCSV();
         readWriteToCSV.writeToCSV(addressBook.get(name),fileName);
     }
+
+    @Override
+    public void writeToJson(String name, String fileName) throws IOException {
+        ReadWriteToJson readWriteToJson = new ReadWriteToJson();
+        readWriteToJson.writeToJson(addressBook.get(name),fileName);
+    }
 }

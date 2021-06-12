@@ -19,4 +19,6 @@ public interface IAddressBookOperations {
     void readToCSV(String file);
 
     void writeToCSV(String name,String fileName) throws CsvRequiredFieldEmptyException, CsvDataTypeMismatchException, IOException;
+
+    void writeToJson(String name, String fileName) throws IOException;
 }

@@ -21,7 +21,8 @@ public class Main {
             System.out.println("Enter 5 to search Persons in state");
             System.out.println("Enter 6 to Write To CSV File");
             System.out.println("Enter 7 Read from CSV File");
-            System.out.println("Enter 8 to exit");
+            System.out.println("Enter 8 to write to json file");
+            System.out.println("Enter 9 to exit");
             option = scanner.nextInt();
             scanner.nextLine();
             switch (option) {
@@ -52,19 +53,26 @@ public class Main {
                     break;
                 case 6:
                     System.out.println("Enter Address Book Name");
-                    String addressBook = scanner.next();
+                    String addressBookToCSV = scanner.next();
                     System.out.println("Enter Name of CSV File in Which You Want to Write");
                     String fileName = scanner.next();
-                    addressBookOperations.writeToCSV(addressBook, fileName);
+                    addressBookOperations.writeToCSV(addressBookToCSV, fileName);
                     break;
                 case 7:
                     System.out.println("Enter Name of CSV File from Which You Want to Read");
+                    String csvFile = scanner.next();
+                    addressBookOperations.readToCSV(csvFile);
+                    break;
+                case 8:
+                    System.out.println("Enter Address Book Name");
+                    String addressBookToJson = scanner.next();
+                    System.out.println("Enter Name of json file in which you want to Write");
                     String file = scanner.next();
-                    addressBookOperations.readToCSV(file);
+                    addressBookOperations.writeToJson(addressBookToJson,file);
                     break;
                 default:
                     break;
             }
-        } while (option != 8);
+        } while (option != 9);
     }
 }
