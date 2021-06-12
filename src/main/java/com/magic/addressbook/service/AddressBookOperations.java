@@ -73,4 +73,10 @@ public class AddressBookOperations implements IAddressBookOperations {
         ReadWriteToJson readWriteToJson = new ReadWriteToJson();
         readWriteToJson.readFromJson(fileName);
     }
+
+    @Override
+    public void writeToTextFile(String name, String fileName) {
+        ReadWriteToTextFile readWriteToTextFile = new ReadWriteToTextFile();
+        readWriteToTextFile.writeToTextFile(addressBook.get(name),fileName);
+    }
 }

@@ -24,4 +24,6 @@ public interface IAddressBookOperations {
     void writeToJson(String name, String fileName) throws IOException;
 
     void readFromJson(String fileName) throws FileNotFoundException;
+
+    void writeToTextFile(String name,String fileName);
 }
