@@ -3,6 +3,10 @@ package com.magic.addressbook.service;
 import com.magic.addressbook.entity.Contact;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
+import com.opencsv.bean.StatefulBeanToCsv;
+import com.opencsv.bean.StatefulBeanToCsvBuilder;
+import com.opencsv.exceptions.CsvDataTypeMismatchException;
+import com.opencsv.exceptions.CsvRequiredFieldEmptyException;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -14,22 +18,15 @@ import java.util.List;
 public class ReadWriteToCSV {
     public static String ADDRESS_BOOK_FILE_NAME = "C:\\Users\\rajni\\Desktop\\";
 
-    public void writeToCSV(List<Contact> personList, String fileName) throws IOException {
-        Path filePath = Paths.get(ADDRESS_BOOK_FILE_NAME + fileName + ".csv");
-        if (Files.notExists(filePath))
-            Files.createFile(filePath);
-        File file = new File(String.valueOf(filePath));
-        try {
-            FileWriter fw = new FileWriter(file, true);
-            CSVWriter writer = new CSVWriter(fw);
-            List<String[]> data = new ArrayList<>();
-            for (Contact details : personList) {
-                data.add(new String[]{details.firstName,details.lastName,details.city,details.state ,details.pinCode,details.mobileNo,details.email});
-            }
-            writer.writeAll(data);
-            writer.close();
-        } catch (IOException e) {
-            e.printStackTrace();
+    public void writeToCSV(List<Contact> personList,String fileName) throws IOException, CsvDataTypeMismatchException,CsvRequiredFieldEmptyException {
+        try
+                (
+                        Writer writer = Files.newBufferedWriter(Paths.get(ADDRESS_BOOK_FILE_NAME +fileName+".csv"));
+                ){
+            StatefulBeanToCsv<Contact> beanToCsv = new StatefulBeanToCsvBuilder<Contact>(writer)
+                    .withQuotechar(CSVWriter.NO_QUOTE_CHARACTER)
+                    .build();
+            beanToCsv.write(personList);
         }
     }
 

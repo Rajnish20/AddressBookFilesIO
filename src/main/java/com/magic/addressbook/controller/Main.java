@@ -2,12 +2,14 @@ package com.magic.addressbook.controller;
 
 import com.magic.addressbook.service.AddressBookOperations;
 import com.magic.addressbook.service.IAddressBookOperations;
+import com.opencsv.exceptions.CsvDataTypeMismatchException;
+import com.opencsv.exceptions.CsvRequiredFieldEmptyException;
 
 import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, CsvRequiredFieldEmptyException, CsvDataTypeMismatchException {
         Scanner scanner = new Scanner(System.in);
         IAddressBookOperations addressBookOperations = new AddressBookOperations();
         int option;

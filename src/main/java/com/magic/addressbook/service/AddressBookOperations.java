@@ -2,6 +2,8 @@ package com.magic.addressbook.service;
 
 import com.magic.addressbook.controller.ContactMenu;
 import com.magic.addressbook.entity.Contact;
+import com.opencsv.exceptions.CsvDataTypeMismatchException;
+import com.opencsv.exceptions.CsvRequiredFieldEmptyException;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -48,16 +50,14 @@ public class AddressBookOperations implements IAddressBookOperations {
     }
 
     @Override
-    public void writeToCSV(String name, String fileName) throws IOException {
-        ReadWriteToCSV readWriteToCSV = new ReadWriteToCSV();
-        readWriteToCSV.writeToCSV(addressBook.get(name),fileName);
-    }
-
-    @Override
     public void readToCSV(String file) {
         ReadWriteToCSV readWriteToCSV = new ReadWriteToCSV();
         readWriteToCSV.readFromCSV(file);
     }
 
-
+    @Override
+    public void writeToCSV(String name, String fileName) throws CsvRequiredFieldEmptyException, CsvDataTypeMismatchException, IOException {
+        ReadWriteToCSV readWriteToCSV = new ReadWriteToCSV();
+        readWriteToCSV.writeToCSV(addressBook.get(name),fileName);
+    }
 }
