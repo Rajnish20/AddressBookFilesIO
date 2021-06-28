@@ -28,6 +28,8 @@ public class ContactMenu {
             scanner.nextLine();
             switch (option) {
                 case 1:
+                    System.out.println("Enter Id");
+                    int id = scanner.nextInt();
                     System.out.println("Enter First Name");
                     String firstName = scanner.nextLine();
                     System.out.println("Enter Last Name");
@@ -42,7 +44,7 @@ public class ContactMenu {
                     String mobileNo = scanner.nextLine();
                     System.out.println("Enter Email");
                     String email = scanner.nextLine();
-                    operations.addContacts(contacts, new Contact(firstName, lastName, city, state, pinCode, mobileNo, email));
+                    operations.addContacts(contacts, new Contact(id,firstName, lastName, city, state, pinCode, mobileNo, email));
                     break;
                 case 2:
                     System.out.println("Enter first Name ");
@@ -56,6 +58,8 @@ public class ContactMenu {
                     String name1 = scanner.nextLine();
                     System.out.println("Enter last name");
                     String name2 = scanner.nextLine();
+                    System.out.println("Enter Id");
+                    int id1 = scanner.nextInt();
                     System.out.println("Enter New First Name");
                     String newFirstName = scanner.nextLine();
                     System.out.println("Enter New Last Name");
@@ -70,7 +74,7 @@ public class ContactMenu {
                     String newMobileNo = scanner.nextLine();
                     System.out.println("Enter New Email");
                     String newEmail = scanner.nextLine();
-                    operations.updateContact(contacts, name1, name2, new Contact(newFirstName, newLastName, newCity, newState, newPinCode, newMobileNo, newEmail));
+                    operations.updateContact(contacts, name1, name2, new Contact(id1,newFirstName, newLastName, newCity, newState, newPinCode, newMobileNo, newEmail));
                     break;
                 case 4:
                     operations.displayContacts(contacts);

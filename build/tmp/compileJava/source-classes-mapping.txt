@@ -1,0 +1,30 @@
+com/magic/addressbook/service/ReadWriteToCSV.java
+ com.magic.addressbook.service.ReadWriteToCSV
+com/magic/addressbook/entity/AddressBook.java
+ com.magic.addressbook.entity.AddressBook
+com/magic/addressbook/service/IAddressBookOperations.java
+ com.magic.addressbook.service.IAddressBookOperations
+com/magic/addressbook/controller/Main.java
+ com.magic.addressbook.controller.Main
+com/magic/addressbook/utility/DBConnection.java
+ com.magic.addressbook.utility.DBConnection
+com/magic/addressbook/controller/ContactMenu.java
+ com.magic.addressbook.controller.ContactMenu
+com/magic/addressbook/service/ReadWriteToTextFile.java
+ com.magic.addressbook.service.ReadWriteToTextFile
+com/magic/addressbook/entity/Contact.java
+ com.magic.addressbook.entity.Contact
+com/magic/addressbook/service/IOperations.java
+ com.magic.addressbook.service.IOperations
+com/magic/addressbook/service/AddressBookOperations.java
+ com.magic.addressbook.service.AddressBookOperations
+com/magic/addressbook/service/Operations.java
+ com.magic.addressbook.service.Operations
+com/magic/addressbook/service/AddressBookRestIOService.java
+ com.magic.addressbook.service.AddressBookRestIOService
+com/magic/addressbook/service/AddressBookServiceDB.java
+ com.magic.addressbook.service.AddressBookServiceDB
+com/magic/addressbook/service/AddressBookService.java
+ com.magic.addressbook.service.AddressBookService
+com/magic/addressbook/service/ReadWriteToJson.java
+ com.magic.addressbook.service.ReadWriteToJson

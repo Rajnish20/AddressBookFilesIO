@@ -1,6 +1,9 @@
 package com.magic.addressbook.entity;
 
+import java.util.Objects;
+
 public class Contact {
+    public  int id;
     public String firstName;
     public String lastName;
     public String city;
@@ -9,7 +12,8 @@ public class Contact {
     public String mobileNo;
     public String email;
 
-    public Contact(String firstName, String lastName, String city, String state, String pinCode, String mobileNo, String email) {
+    public Contact(int id, String firstName, String lastName, String city, String state, String pinCode, String mobileNo, String email) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.city = city;
@@ -17,6 +21,10 @@ public class Contact {
         this.pinCode = pinCode;
         this.mobileNo = mobileNo;
         this.email = email;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getFirstName() {
@@ -87,5 +95,18 @@ public class Contact {
                 ", mobileNo='" + mobileNo + '\'' +
                 ", email='" + email + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Contact contact = (Contact) o;
+        return id == contact.id && Objects.equals(firstName, contact.firstName) && Objects.equals(lastName, contact.lastName) && Objects.equals(city, contact.city) && Objects.equals(state, contact.state) && Objects.equals(pinCode, contact.pinCode) && Objects.equals(mobileNo, contact.mobileNo) && Objects.equals(email, contact.email);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, firstName, lastName, city, state, pinCode, mobileNo, email);
     }
 }

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.magic.addressbook.AddressBookRestIOTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-06-27T11:03:00" hostname="DESKTOP-38KI29F" time="0.338">
+  <properties/>
+  <testcase name="given6Employ_WhenAddedToDBUsingThreads_ShouldMatchEmployeeEntries()" classname="com.magic.addressbook.AddressBookRestIOTest" time="0.338"/>
+  <system-out><![CDATA[Duration With Threads PT0.033S
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

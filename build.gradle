@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    compile "com.opencsv:opencsv:4.0"
+    compile 'com.google.code.gson:gson:2.2.+'
+    testCompile group: 'io.rest-assured', name: 'rest-assured',version: '4.3.1'
+    compile group: 'mysql' , name: 'mysql-connector-java', version: '5.1.49'
+
+}
+
+test {
+    useJUnitPlatform()
+}
